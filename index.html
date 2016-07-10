@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sample Website</title>
+    <link rel="stylesheet" href="style.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto+Slab" rel="stylesheet">
+</head>
+<body>
+    <nav>
+        <h1>Name</h1>
+        <ul id="nav-list">
+            <li><a class="scroll-link" href="#about">About</a></li>
+            <li><a class="scroll-link" href="#gallery">Gallery</a></li>
+        </ul>
+    </nav>
+    <div id="content">
+        <section id="about">
+            <h1 align="center">About Me</h1>
+            <p>Here's where I write something about myself.</p>
+            <p>I really like <span id="liked-item">coffee</span>.</p>
+            <h4>Top 3 facts about me:</h4>
+            <ol id="fact-list">
+                <li class="list-item">I'm currently a <b>[year]</b> at UIUC.</li>
+                <li class="list-item">I'm from <em>[town]</em>.</li>
+                <li class="list-item">I study [major].</li>
+            </ol>
+        </section>
+        <section id="gallery">
+            <h1 align="center">Gallery</h1>
+            <img src="image.jpeg"></img>
+        </section>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+    <script>
+        var itemsLiked = ["coffee", "bagels", "cats", "PokemonGo", "sleeping", "coding"];
+        var index = 0;
+        setInterval(function() {
+            var header = document.getElementById("liked-item");
+            index = (index + 1) % itemsLiked.length;
+            header.innerHTML = itemsLiked[index];
+        }, 3000);
+    </script>
+    <script>
+        $("a.scroll-link").bind("click", function(event) {
+            event.stopPropagation();
+            var target = $(this).attr("href");
+            $('html, body').animate({
+                scrollTop: $(target).offset().top - 80
+            }, 1000);
+            return false;
+        });
+    </script>
+</body>
+</html>
