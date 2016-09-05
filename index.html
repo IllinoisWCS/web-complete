@@ -1,12 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <!-- The title is the name of our website, what shows up in the browser tab as the name. -->
+    <!-- Fill in your title here -->
     <title>Sample Website</title>
+
+    <!-- A link tag is what's used to pull in outside resources, otherwise known as assets. Assets include CSS files (stylesheets), font files (i.e. Google Fonts), icon sets. -->
     <link rel="stylesheet" href="style.css">
 
+    <!-- Link to Google Fonts goes here -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto+Slab" rel="stylesheet">
 </head>
 <body>
+    <!-- Build your navigation bar here -->
     <nav>
         <h1>Name</h1>
         <ul id="nav-list">
@@ -14,6 +20,7 @@
             <li><a class="scroll-link" href="#gallery">Gallery</a></li>
         </ul>
     </nav>
+    <!-- Build your content here -->
     <div id="content">
         <section id="about">
             <h1 align="center">About Me</h1>
@@ -31,7 +38,10 @@
             <img src="image.jpeg"></img>
         </section>
     </div>
+    <!-- jQuery is a Javascript library that seeks to make it easier to manipulate HTML objects (so-called Document Object Model (DOM) object). We'll be using it today as a means of making it easier to type our Javascript code. You are free to intermix ordinary Javascript with jQuery. We'll show you an example of ordinary Javascript vs. jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+    <!-- Add more Javascript snippets down here -->
+    <!-- This Javascript snippet will take an array of strings and change the header to output one of those strings every 3 seconds -->
     <script>
         var itemsLiked = ["coffee", "bagels", "cats", "PokemonGo", "sleeping", "coding"];
         var index = 0;
@@ -41,6 +51,7 @@
             header.innerHTML = itemsLiked[index];
         }, 3000);
     </script>
+    <!-- This Javascript snippet will bind to the click event an animation that imitates smooth scrolling -->
     <script>
         $("a.scroll-link").bind("click", function(event) {
             event.stopPropagation();

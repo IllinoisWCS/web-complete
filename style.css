@@ -1,4 +1,5 @@
 /* Text */
+/* Add your styling for your text here */
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Roboto Slab', sans-serif;
 }
@@ -16,14 +17,13 @@ nav {
     z-index: 1000;
     min-height: 50px;
     width: 80%;
-    background-color: #eeeeee;
-    /* top right bottom left*/
-    /* top-bottom right-left*/
     padding-left: 10%;
     padding-right: 10%;
     display: block;
+    background-color: #eeeeee;
 }
 
+/* Add more nav bar attributes and styling here */
 nav h1 {
     margin-top: 15px;
     float: left;
@@ -50,6 +50,7 @@ nav h1 {
     line-height: 1.4;
 }
 
+/* Add scroll link attributes here */
 a.scroll-link {
     text-decoration: none;
     color: blue;
@@ -60,6 +61,7 @@ a.scroll-link:hover {
 }
 
 /* Content */
+/* Add some styling for your content here */
 #content {
     margin-top: 100px;
 }
