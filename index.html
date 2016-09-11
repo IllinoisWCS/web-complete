@@ -25,7 +25,7 @@
         <section id="about">
             <h1 align="center">About Me</h1>
             <p>Here's where I write something about myself.</p>
-            <!-- Add a paragraph. Then within it, add a span with an id called liked-item. Put something you like within the span. -->
+            <!-- Example 1: Add a paragraph. Then within it, add a span with an id of "liked-item". Put something you like within the span. -->
             <p>I really like <span id="liked-item">coffee</span>.</p>
             <h4>Top 3 facts about me:</h4>
             <ol id="fact-list">
@@ -33,19 +33,19 @@
                 <li class="list-item">I'm from <em>[town]</em>.</li>
                 <li class="list-item">I study [major].</li>
             </ol>
-            <!-- Add a button with an id named cool-button -->
+            <!-- Challenge 1: Add a button with an id of "cool-button" -->
             <button id="cool-button">Click Me</button>
-            <!-- Add a paragraph. Inside that paragraph, add a span with an id named grow-text -->
+            <!-- Challenge 2: Add a paragraph. Inside that paragraph, add a span with an id of "grow-text" -->
             <p><span id="grow-text">Some Cool Growing Text</span></p>
-            <!-- add 2 buttons, one with a + and one with a -. Assign them ids-->
+            <!-- Challenge 3: add 2 buttons, one with a + and one with a -. Assign them ids of "plus" and "minus", respectively.-->
             <button id="plus">+</button> <button id="minus">-</button>
-            <!-- Add 2 buttons, one that has an id play and another pause -->
+            <!-- Challenge 4: Add 2 buttons, one with Play and another with Pause. Assign them ids of "play" and "pause", respectively. -->
             <button id="play">Play</button> <button id="pause">Pause</button>
-            <!-- Add an unordered list with an id fly-list -->
+            <!-- Challenge 5: Add an unordered list <ul> with an id of "fly-list" -->
             <ul id="fly-list"></ul>
-            <!-- Add a paragraph with a span. Inside that span (which has an id of bold-text), write something that you think should be emphasized :D -->
+            <!-- Challenge 6: Add a paragraph with a span. Inside that span (which has an id of "bold-text"), write something that you think should be emphasized :D -->
             <p><span id="bold-text">Emphasize this!</span></p>
-            <!-- Create a canvas element with an id named smiley. It should have a width of 150 and a height of 150 -->
+            <!-- Challenge 7: Create a canvas element with an id named "smiley". It should have a width of 150 and a height of 150 -->
             <canvas id="smiley" width="150" height="150"></canvas>
         </section>
         <section id="gallery">
@@ -53,10 +53,10 @@
             <img src="image.jpeg"></img>
         </section>
     </div>
-    <!-- jQuery is a Javascript library that seeks to make it easier to manipulate HTML objects (so-called Document Object Model (DOM) object). We'll be using it today as a means of making it easier to type our Javascript code. You are free to intermix ordinary Javascript with jQuery. We'll show you an example of ordinary Javascript vs. jQuery -->
+    <!-- jQuery is a Javascript library that seeks to make it easier to manipulate HTML objects (so-called Document Object Model (DOM) objects). We'll be using it today as a means of making it easier to type our Javascript code. You are free to intermix ordinary Javascript with jQuery. We'll show you an example of ordinary Javascript vs. jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
     <!-- Add more Javascript snippets down here -->
-    <!-- This Javascript snippet will take an array of strings and change the header to output one of those strings every 3 seconds -->
+    <!-- Example 1: This Javascript snippet will take an array of strings and change the span with an id of "liked-item" to rotate through the array and display one of those strings every 3 seconds. -->
     <script>
         var itemsLiked = ["coffee", "bagels", "cats", "PokemonGo", "sleeping", "coding"];
         var index = 0;
@@ -66,7 +66,7 @@
             header.innerHTML = itemsLiked[index];
         }, 3000);
     </script>
-    <!-- This Javascript snippet will bind to the click event an animation that imitates smooth scrolling -->
+    <!-- Example 2: This Javascript snippet will look for anchor tags <a> with a class of "scroll-link" and bind to their click event an animation that imitates smooth scrolling. -->
     <script>
         $("a.scroll-link").bind("click", function(event) {
             event.stopPropagation();
@@ -77,9 +77,9 @@
             return false;
         });
     </script>
-    <!-- This Javascript snippet will change the color of a button when it is hovered over or clicked on. Do this for cool-button -->
+    <!-- Challenge 1: This Javascript snippet will change the color of a button when it is hovered over or clicked on. Do this for "cool-button -->
     <!-- Hint: jQuery has hover and click functions, each of which take some functions as parameters -->
-    <!-- Hint: hover takes 2 functions as parameters, the first that is supposed to handle when the mouse moves onto the button, and the second that is supposed to handle when the mouse moves off of the button -->
+    <!-- Hint: hover takes 2 functions as parameters, the first is supposed to handle when the mouse moves onto the button, and the second is supposed to handle when the mouse moves off of the button -->
     <!-- Hint: Use $(this) -->
     <script>
         $("#cool-button").hover(function() {
@@ -91,11 +91,11 @@
             $(this).css('background-color', 'blue');
         });
     </script>
-    <!-- This Javascript snippet will change the font size of a piece of text when you click on a + or - button. Extra added bonus is that when you hover over the piece of text itself, it will also increase in font size, 1 px every second. Do this for grow-text. -->
+    <!-- Challenge 2: This Javascript snippet will change the font size of a piece of text when you click on a + or - button. Extra added bonus if when you hover over the piece of text itself, it will also increase in font size, 1 px every second. Do this for grow-text. -->
     <!-- Hint: you might need the Javascript function parseInt -->
     <!-- Hint: we don't want the font size to decrease past 0. We should limit it to 1px as the smallest possible font size. An if statement might be handy.-->
-    <!-- Hint: The nice thing about Javascript is that you can save functions as variables. Since hovering and clicking the plus button do the same thing, is it possible consolidate the code? How can you do so? -->
-    <!-- Hint: Remember the parameters to hover? The first function, since we want it to increase in font size every second, setInterval might be helpful. Once we no longer hover over the text, we want this growing to stop. clearInterval might be useful -->
+    <!-- Hint: The nice thing about Javascript is that you can save functions as variables. Since hovering and clicking the plus button do the same thing, is it possible consolidate the code? -->
+    <!-- Hint: Remember the parameters to hover? The first function, since we want it to increase in font size every second, setInterval might be helpful. Once we no longer hover over the text, we want this growing to stop. clearInterval might be useful. -->
     <script>
         var growText = function() {
             var fontSize = parseInt($("#grow-text").css('font-size')) + 1;
@@ -116,7 +116,7 @@
             clearInterval(growTextByInterval);
         });
     </script>
-    <!-- This Javascript snippet lets us play and pause an audio clip when we press a play and pause button -->
+    <!-- Challenge 3: This Javascript snippet lets us play and pause an audio clip when we press a play and pause button -->
     <!-- Hint: You'll need to add an audio tag with a src attribute to an MP3 file of your choosing. Google search: HTML5 Audio API -->
     <!-- Hint: In order to use the play and pause functions, you'll need to switch to regular Javascript. What is the equivalent in Javascript of $('#song') ? -->
     <audio id="song" src="test.mp3"></audio>
@@ -128,15 +128,16 @@
             document.getElementById('song').pause();
         });
     </script>
-    <!-- This Javascript snippet creates a HTML unordered list using jQuery within a <ul> with an id of fly-list. It loops through an array of strings and appends a <li> to fly-list with that array item.-->
+    <!-- Challenge 4: This Javascript snippet creates a HTML unordered list using jQuery fly-list. It loops through an array of strings and appends a <li> to fly-list with that array item. -->
     <!-- Hint: The append method would be very helpful here. -->
+    <!-- Hint: You can actually write pure HTML as a string and it will get rendered by jQuery, amazing eh? -->
     <script>
         var classes = ["Ice Skating", "Floral Arrangement", "Bowling", "Japanese Tea Ceremony", "Horticulture"];
         for (var i = 0; i < classes.length; i++) {
             $('#fly-list').append('<li>' + classes[i] + '</li>');
         }
     </script>
-    <!-- This Javascript snippet hovers over a piece of text and changes it from non styled to bold. -->
+    <!-- Challenge 5: This Javascript snippet hovers over a piece of text and changes it from non styled to bold. Do this for bold-text. -->
     <script>
         $('#bold-text').hover(function() {
             $(this).css('font-style', 'bold');
@@ -144,10 +145,10 @@
             $(this).css('font-style', 'normal');
         });
     </script>
-    <!-- This Javascript snippet uses a canvas element and draws a smiley face. -->
+    <!-- Challenge 6: This Javascript snippet uses a canvas element and draws a smiley face. Do this for smiley. -->
     <!-- Hint: This might be useful. https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial -->
     <!-- Hint: You might want to use the arc methods. Also the moveTo methods to move your imaginary pen to different coordinates -->
-    <!-- Hint: Start with a circle. You might want to use Math.PI. --> 
+    <!-- Hint: Start with a circle. You might want to use Math.PI. -->
     <script>
         var canvas = document.getElementById('smiley');
         if (canvas.getContext) {
@@ -161,13 +162,17 @@
             var eyeRadius = 5;
 
             ctx.beginPath();
-            ctx.arc(centerX, centerY,radius,0,deg360rad,!clockwise); // Outer circle
+            // Draw the outer circle, not clockwise
+            ctx.arc(centerX, centerY,radius,0,deg360rad,!clockwise);
+            // Draw the mouth, clockwise
             ctx.moveTo(centerX + radius / 2,centerY);
-            ctx.arc(centerX,centerY,radius / 2,0,deg180rad,clockwise);  // Mouth (clockwise)
+            ctx.arc(centerX,centerY,radius / 2,0,deg180rad,clockwise);
+            // Draw the left eye
             ctx.moveTo(centerX - 10,centerY - 10);
-            ctx.arc(centerX - 15,centerY - 10,eyeRadius,0,deg360rad,true);  // Left eye
+            ctx.arc(centerX - 15,centerY - 10,eyeRadius,0,deg360rad,true);
+            // Draw the right eye
             ctx.moveTo(centerX + 20,centerY - 10);
-            ctx.arc(centerX + 15,centerY - 10,eyeRadius,0,deg360rad,true);  // Right eye
+            ctx.arc(centerX + 15,centerY - 10,eyeRadius,0,deg360rad,true);
             ctx.stroke();
         }
     </script>
