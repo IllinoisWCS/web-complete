@@ -74,3 +74,8 @@ a.scroll-link:hover {
 #gallery > img {
     width: 100%;
 }
+
+/* Cool Button */
+#cool-button {
+    background-color: #aaaaaa;
+}
